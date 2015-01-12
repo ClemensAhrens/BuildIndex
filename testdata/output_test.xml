@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <chains>
+    <chain reprText="Stanford University">
+      <coreference>
+        <chapter>1.1</chapter>
+        <id>1</id>
+      </coreference>
+    </chain>
+    <chain reprText="2. Beispiel">
+      <coreference>
+        <chapter>1.1</chapter>
+        <id>2</id>
+      </coreference>
+    </chain>
+  </chains>
+</root>
+
