@@ -30,12 +30,13 @@ public class InputAnalyzer {
 
 			// ---- Create list of <coreferences> & extract chapID
 			Element root = doc.getRootElement();
-			Element document = root.getChild("document");
-			String chapID = document.getAttribute("chap").getValue(); // extract
+			String chapID = root.getAttribute("id").getValue(); // extract chapter argument ID 
+//			Element document = root.getChild("document"); // jump to necessary level of sub elements
+//			String chapID = document.getAttribute("chap").getValue(); // extract
 																		// chapID
 																		// for
 																		// outputdoc
-			Element corefs = document.getChild("coreferences");
+			Element corefs = root.getChild("coreferences");
 			@SuppressWarnings("unchecked")
 			List<Element> listcoref = corefs.getChildren("coreference");
 			for (Element coref : listcoref) {

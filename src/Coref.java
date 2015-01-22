@@ -28,7 +28,7 @@ public class Coref {
 		} else {
 			System.out.println("Usage: " + "\n"
 					+ "java Coref -i <XmlFile> -o <NewFile>" + "\n"
-					+ "Example (Unix): " + "\n"
+					+ "Example (Linux): " + "\n"
 					+ "java Coref -i ../Input/*.xml -o ../output.xml");
 			System.exit(-1); // TODO: search exit status for failure
 		}
