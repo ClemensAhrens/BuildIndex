@@ -24,7 +24,7 @@ public class OutputWriter {
 	public void addCoreferences(Map<String, Coreference> coreferences) {
 		Set<String> keySet = coreferences.keySet();
 		for (String key : keySet) {
-			// create ArrayList if key not alrdy existent
+			// create ArrayList if key not already existent
 			if (!multiMap.containsKey(key)) {
 				multiMap.put(key, new ArrayList<Coreference>());
 			}
@@ -34,10 +34,8 @@ public class OutputWriter {
 	}
 
 	public void writeToFile() {
-		// TODO Auto-generated method stub
-		// Erstellen der Outputdatei
+		// create output element, which will be turned to output XML later
 		Document outputdoc = new Document(new Element("root"));
-		// Option zur Kennzeichnung der Outputdatei ( -o output.xml ) TODO
 
 		// write basic elements
 		Element chains = new Element("chains");
@@ -63,11 +61,11 @@ public class OutputWriter {
 			}
 		}
 
-		// format output
+		// format output XML file
 		XMLOutputter outp = new XMLOutputter();
 		outp.setFormat(Format.getPrettyFormat());
 
-		// ---- Write the complete result document to XML file ----
+		// ---- Write the complete result document to output XML file ----
 		try {
 			outp.output(outputdoc, new FileOutputStream(outFile));
 		} catch (IOException e) {

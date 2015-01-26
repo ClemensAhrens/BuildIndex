@@ -30,7 +30,7 @@ public class Coref {
 					+ "java Coref -i <XmlFile> -o <NewFile>" + "\n"
 					+ "Example (Linux): " + "\n"
 					+ "java Coref -i ../Input/*.xml -o ../output.xml");
-			System.exit(-1); // TODO: search exit status for failure
+			System.exit(-1);
 		}
 	}
 
@@ -40,7 +40,8 @@ public class Coref {
 
 		OutputWriter outputWriter = new OutputWriter(coref.getOutFile());
 
-		// for input file
+		// for each input XML: Analyze, build Maps of coreferences, pass to
+		// output XML
 		try {
 			for (String inFile : coref.getInFiles()) {
 				InputAnalyzer inputAnalyzer = new InputAnalyzer(inFile);
@@ -55,6 +56,7 @@ public class Coref {
 			e.printStackTrace();
 		}
 
+		// create output XML
 		outputWriter.writeToFile();
 
 	}

@@ -2,8 +2,8 @@ public class Coreference {
 	String text;
 	String chapId;
 	Integer corefId;
-	
-	public Coreference(String text, String chapId, Integer corefId){
+
+	public Coreference(String text, String chapId, Integer corefId) {
 		this.text = text;
 		this.chapId = chapId;
 		this.corefId = corefId;
