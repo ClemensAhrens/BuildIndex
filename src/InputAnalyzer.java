@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import org.jdom.input.SAXBuilder;
 public class InputAnalyzer {
 
 	File infile;
+	List<String> listOfText;
 
 	public InputAnalyzer(String filename) throws Exception {
 		infile = new File(filename);
@@ -22,6 +24,7 @@ public class InputAnalyzer {
 
 	public Map<String, Coreference> extractCoreferences() {
 		Map<String, Coreference> map = new HashMap<String, Coreference>();
+		listOfText = new ArrayList<>();
 
 		// aufrufen des builders pro input
 		SAXBuilder builder = new SAXBuilder();
@@ -48,6 +51,11 @@ public class InputAnalyzer {
 				for (Element mention : listmention) {
 					if (null == mention)
 						continue;
+					
+					//create list of all realizations of each coreference TODO
+					String textContent = mention.getChildText("text");
+						//if textContent =! part of StopWord list add to listOfText
+					  listOfText.add(textContent);
 
 					// search for "representative" mention
 					String s = mention.getAttributeValue("representative");
