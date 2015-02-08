@@ -15,5 +15,5 @@ Compile:
 source files in BuildIndex/src/
 necessary jar in BuildIndex/lib/
 
-Example (Linux):
+Example for Linux:
 $ javac -classpath ../lib/jdom.jar *.java
