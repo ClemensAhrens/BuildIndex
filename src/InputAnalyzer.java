@@ -52,10 +52,11 @@ public class InputAnalyzer {
 					if (null == mention)
 						continue;
 					
-					//create list of all realizations of each coreference TODO
-					String textContent = mention.getChildText("text");
-						//if textContent =! part of StopWord list add to listOfText
-					  listOfText.add(textContent);
+//					//create list of all realizations of each coreference TODO
+//					String textContent = mention.getChildText("text");
+//						//if textContent =! part of StopWord list add to listOfText
+//					  listOfText.add(textContent);
+//					  System.out.println(listOfText);
 
 					// search for "representative" mention
 					String s = mention.getAttributeValue("representative");

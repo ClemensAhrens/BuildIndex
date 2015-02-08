@@ -1,0 +1,19 @@
+# BuildIndex
+
+JAVA 7 required
+for checking:
+$ java -version
+java version "1.7.[...]"
+
+Usage:
+java Coref -i <XmlFile> -o <NewFile>
+
+Example (Linux):
+$ java Coref -i ../Input/*.xml -o ../output.xml
+
+Compile:
+source files in BuildIndex/src/
+necessary jar in BuildIndex/lib/
+
+Example (Linux):
+$ javac -classpath ../lib/jdom.jar *.java
